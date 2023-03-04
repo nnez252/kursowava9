@@ -31,7 +31,7 @@ public class TaskService {
     public List<Task> getTasksForDay(LocalDate date) {
         List<Task> tasksForDay = new ArrayList<>();
         for (Task task : tasks) {
-            if (task.isRepeatable()) {
+            if (task.getDateTime().isEqual(LocalDateTime.now())) {
                 LocalDateTime nextExecutionTime = task.getNextExecutionTime();
                 if (nextExecutionTime != null && nextExecutionTime.toLocalDate().equals(date)) {
                     tasksForDay.add(task);
