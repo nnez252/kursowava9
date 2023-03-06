@@ -1,0 +1,11 @@
+import java.time.LocalDate;
+
+public class DailyTask extends Task{
+
+    public DailyTask(String titel, Type type, int id, String descriprtion) {
+        super(titel, type, id, descriprtion);
+    }
+    public boolean appearsIn(LocalDate date) {
+        return true;
+    }
+}

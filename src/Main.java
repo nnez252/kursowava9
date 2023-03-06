@@ -1,14 +1,17 @@
 import java.time.LocalDate;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         TaskService task1 = new TaskService();
         TaskService task2 = new TaskService();
         TaskService task3 = new TaskService();
-        task1.addTask(new Task("школа", Type.WORK, 1, "домашка", RepeatFrequency.DAILY, true));
-        task2.addTask(new Task("прогулка", Type.PERSONAL, 2, "в парке", RepeatFrequency.ONCE, false));
-        task3.addTask(new Task("дом", Type.PERSONAL, 3, "уборка", RepeatFrequency.WEEKLY, true));
+        TaskService task4 = new TaskService();
+        TaskService task5 = new TaskService();
+        task1.addTask(new DailyTask("школа", Type.WORK, 1, "домашка" ));
+        task2.addTask(new OneTimeTask("прогулка", Type.PERSONAL, 2, "в парке"));
+        task3.addTask(new WeeklyTask("дом", Type.PERSONAL, 3, "уборка"));
+        task4.addTask(new YearlyTask("День рожденье", Type.PERSONAL, 4, "подруги"));
+        task5.addTask(new OneTimeTask("Встреча", Type.PERSONAL, 5, "с незнакомцем"));
         task3.removeTask(3);
         task2.getTasksForDay(LocalDate.now());
 
