@@ -1,7 +1,8 @@
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Task {
+public abstract class Task {
     private static int counter = 0;
 
     private int IdGenerator;
@@ -56,6 +57,8 @@ public class Task {
     public void setDescriprtion(String descriprtion) {
         this.descriprtion = descriprtion;
     }
+
+    public abstract boolean appearsIn(LocalDate date);
 
 
 
